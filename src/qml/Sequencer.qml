@@ -77,9 +77,18 @@ Rectangle {
     property real timelineOffset: 0
     property real timelineLength: 0
 
+    Behavior on timelineScale { NumberAnimation { duration: 100 } }
+
+    Text {
+        id: dummyText
+        text: 'A'
+        visible: false
+    }
+
     Item {
         id: timelineHeader
-        width: effectsTitle.height*3
+//        width: effectsTitle.height*3
+        width: dummyText.width*5
         anchors.top: parent.top
         anchors.bottom: controlButtons.top
 
@@ -88,12 +97,18 @@ Rectangle {
             anchors.top: parent.top
             height: parent.height/2
             width: parent.width
-            color: 'darkgrey'
-            Text {
-                id: effectsTitle
-                rotation: -90
+            color: 'grey'
+//            Text {
+//                id: effectsTitle
+//                rotation: -90
+//                anchors.centerIn: parent
+//                text: 'Effects'
+//            }
+            Image {
                 anchors.centerIn: parent
-                text: 'Effects'
+                width: parent.width/2
+                height: width
+                source: '../images/effects-icon.png'
             }
         }
 
@@ -103,11 +118,17 @@ Rectangle {
             height: parent.height/2
             width: parent.width
             color: 'grey'
-            Text {
-                id: videosTitle
-                rotation: -90
+//            Text {
+//                id: videosTitle
+//                rotation: -90
+//                anchors.centerIn: parent
+//                text: 'Videos'
+//            }
+            Image {
                 anchors.centerIn: parent
-                text: 'Videos'
+                width: parent.width/2
+                height: width
+                source: '../images/video-icon.png'
             }
         }
 
@@ -180,7 +201,7 @@ Rectangle {
                 width: (endTime - startTime)*timelineScale
                 height: timelineHeader.height/2
 
-                border.color: 'black'
+//                border.color: 'black'
                 color: 'transparent'
 
                 clip: true

@@ -28,22 +28,29 @@ Rectangle {
         }
     }
 
-    property int margins: title.height
+
+    Text {
+        id: dummyText
+        text: 'A'
+        visible: false
+    }
+
+    property int margins: dummyText.height*3
 
     Text {
         id: title
-        anchors.verticalCenter: availableOptionsCombobox.verticalCenter
+        anchors.top: parent.top
         anchors.left: parent.left
         anchors.margins: margins
         font.bold: true
-        //                font.pointSize: 15
+
         text: "Add " + entityType
     }
 
     ComboBox {
         id: availableOptionsCombobox
         anchors.right: parent.right
-        anchors.top: parent.top
+        anchors.verticalCenter: title.verticalCenter
         anchors.margins: margins
         dataModel: availableOptions
     }
@@ -64,7 +71,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.margins: margins
 
-        height: 3*margins
+        height: dummyText.height*3
         width: availableOptionsCombobox.width
         color: 'white'
         textColor: 'black'
@@ -91,7 +98,7 @@ Rectangle {
         anchors.right: parent.right
         anchors.margins: margins
 
-        height: 3*margins
+        height: dummyText.height*3
         width: availableOptionsCombobox.width
         color: 'white'
         textColor: 'black'

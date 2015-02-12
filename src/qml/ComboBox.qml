@@ -22,7 +22,7 @@ Rectangle {
         text: 'A'
         visible: false
     }
-    property int componentHeight: dummyText.height*2
+    property int componentHeight: dummyText.height*3
 
     width: dummyText.width*20
     height: expanded? componentHeight*dataModel.length : componentHeight

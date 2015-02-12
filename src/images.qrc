@@ -9,5 +9,7 @@
         <file>images/play-icon.png</file>
         <file>images/stop-icon.png</file>
         <file>images/reset-icon.png</file>
+        <file>images/effects-icon.png</file>
+        <file>images/video-icon.png</file>
     </qresource>
 </RCC>
