@@ -308,22 +308,49 @@ Rectangle {
 
         Button {
             id: playButton
-            width: parent.width/2
-            text: running? qsTr('Pause') : qsTr('Play')
+            width: parent.width/4
+            icon: running? '../images/stop-icon.png' : '../images/play-icon.png'
             onClicked: togglePlayPauseClicked()
 
-            border.color: 'grey'
+            color: 'grey'
+//            border.color: 'grey'
         }
 
         Button {
             id: resetButton
             anchors.left: playButton.right
-            width: parent.width/2
-            text: qsTr('Reset')
+            width: parent.width/4
+            icon: '../images/reset-icon.png'
             onClicked: resetClicked()
 
-            border.color: 'grey'
+            color: 'grey'
+//            border.color: 'grey'
+
         }
+
+        Button {
+            id: zoomOutButton
+            anchors.left: resetButton.right
+            width: parent.width/4
+            icon: '../images/zoomout-icon.png'
+            onClicked: timelineScale = Math.max( timelineScale/2, 0.1 )
+
+            color: 'grey'
+//            border.color: 'black'
+
+        }
+
+        Button {
+            id: zoomInButton
+            anchors.left: zoomOutButton.right
+            width: parent.width/4
+            icon: '../images/zoomin-icon.png'
+            onClicked: timelineScale = Math.min( timelineScale*2, 10 )
+
+            color: 'grey'
+//            border.color: 'black'
+        }
+
     }
 
     Dialog {
