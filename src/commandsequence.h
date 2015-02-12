@@ -3,6 +3,18 @@
 
 #include <QAbstractListModel>
 
+/**
+ * @brief The CommandSequence class - maintains a chronologically list of commands
+ * and the time at which they are to be fired.
+ *
+ * Each Timeline event - be it a Video, an Effect essentially translates into
+ * a sequence of commands.
+ *
+ * Eg. addVideo(videoId, videoName, startTime, endTime) =>
+ *          < startTime > start video <videoName>
+ *          < endTime >   stop video <videoName>
+ *
+ */
 class CommandSequence: public QAbstractListModel
 {
 

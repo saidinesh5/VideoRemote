@@ -11,7 +11,7 @@ class QTimer;
 /**
  * @brief The ScreenConnection class - This class sends/receives commands to the remote screen.
  * Currently this also plays the role of a sequencer.
- * But that can be refactored into it's own class to make this class "the network layer"
+ * TODO: But that can be refactored into it's own class to make this class "the network layer"
  * to comply with the KISS principle
  */
 class ScreenConnection : public QAbstractListModel
