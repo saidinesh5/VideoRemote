@@ -2,6 +2,7 @@
 #include <QQuickView>
 #include <QQmlContext>
 #include <QQmlEngine>
+#include <QtQml>
 
 #include "screenconnection.h"
 #include "commandsequence.h"
