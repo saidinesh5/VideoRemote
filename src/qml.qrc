@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>qml/SequencesView.qml</file>
+        <file>qml/Button.qml</file>
+        <file>qml/LineEdit.qml</file>
+        <file>qml/Sequencer.qml</file>
+        <file>qml/Dialog.qml</file>
+        <file>qml/ComboBox.qml</file>
+        <file>qml/TimelineEntityModel.qml</file>
+        <file>qml/TimelineEntitySelector.qml</file>
+    </qresource>
+</RCC>
