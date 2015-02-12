@@ -36,21 +36,21 @@ The message format should be a plain text string terminated with \n.
 
 Here is an example for what might be sent if the exhibition visitor initiates a video sequence.
 
-start video1
+      start video1
 
 a 500 ms pause
 
-stop video1
-start video2
+      stop video1
+      start video2
 
 a 1200 ms pause
 
-start fade
+      start fade
 
 a 200 ms pause
 
-stop fade
-stop video2
+      stop fade
+      stop video2
 
 Optional Requirements
 
