@@ -116,8 +116,8 @@ Rectangle {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.top: parent.top
-            text: '+'
-            color: 'lightgreen'
+
+            icon: '../images/add-icon.png'
 
             onClicked: {
                 dialog.loader.setSource( 'TimelineEntitySelector.qml',
@@ -137,8 +137,9 @@ Rectangle {
             anchors.right: parent.right
             anchors.top: parent.top
             anchors.topMargin: parent.height/2
-            text: '+'
-            color: 'lightgreen'
+
+            icon: '../images/add-icon.png'
+
             onClicked: dialog.loader.setSource( 'TimelineEntitySelector.qml',
                                                {
                                                    parentDialog: dialog,
@@ -179,23 +180,38 @@ Rectangle {
                 width: (endTime - startTime)*timelineScale
                 height: timelineHeader.height/2
 
-                color: 'black'
+                border.color: 'black'
+                color: 'transparent'
 
                 clip: true
 
+
+                Image {
+                    anchors.fill: parent
+                    source: '../images/effect.jpg'
+
+                    opacity: 0.5
+                }
+
                 Text {
                     anchors.centerIn: parent
-                    color: 'white'
+                    color: 'black'
                     text: entityName
+
+                    font.bold: true
                 }
 
                 Button {
                     anchors.top: parent.top
                     anchors.right: parent.right
-                    text: 'x'
-                    color: 'red'
-                    border.color: 'transparent'
+                    anchors.margins: 1
+
+                    height: width
+                    icon: '../images/delete-icon.png'
+
                     onClicked: currentSequence.deleteEffect(entityId)
+
+
                 }
 
                 onRightEdgeChanged: if(rightEdge > timelineLength) timelineLength = rightEdge
@@ -207,8 +223,10 @@ Rectangle {
 
             model: videosModel
 
-            delegate: Rectangle {
+            delegate: Image {
                 property real rightEdge: endTime
+
+                source: '../images/videoreel.png'
 
                 x: startTime*timelineScale
                 width: (endTime - startTime)*timelineScale
@@ -217,9 +235,11 @@ Rectangle {
 
                 clip: true
 
-                color: entityName === 'video1'? 'lightblue':
-                       entityName === 'video2'? 'orange':
-                                                'lightpink'
+                fillMode: Image.TileHorizontally
+
+//                color: entityName === 'video1'? 'lightblue':
+//                       entityName === 'video2'? 'orange':
+//                                                'lightpink'
                 Text {
                     anchors.centerIn: parent
                     color: 'black'
@@ -229,9 +249,11 @@ Rectangle {
                 Button {
                     anchors.top: parent.top
                     anchors.right: parent.right
-                    text: 'x'
-                    color: 'red'
-                    border.color: 'transparent'
+                    anchors.margins: 1
+
+                    height: width
+                    icon: '../images/delete-icon.png'
+
                     onClicked: currentSequence.deleteVideo(entityId)
                 }
 
@@ -289,6 +311,8 @@ Rectangle {
             width: parent.width/2
             text: running? qsTr('Pause') : qsTr('Play')
             onClicked: togglePlayPauseClicked()
+
+            border.color: 'grey'
         }
 
         Button {
@@ -297,6 +321,8 @@ Rectangle {
             width: parent.width/2
             text: qsTr('Reset')
             onClicked: resetClicked()
+
+            border.color: 'grey'
         }
     }
 
