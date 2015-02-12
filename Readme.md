@@ -12,6 +12,8 @@ Build it
       qmake -r ..
       make
 
+![](https://raw.githubusercontent.com/saidinesh5/VideoRemote/master/screenshot.png "Obligatory screenshot")
+
 
 Problem statement
 ---
