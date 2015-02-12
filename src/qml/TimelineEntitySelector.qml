@@ -35,13 +35,14 @@ Rectangle {
         visible: false
     }
 
-    property int margins: dummyText.height*3
+    property int margins: dummyText.width
 
     Text {
         id: title
         anchors.top: parent.top
         anchors.left: parent.left
-        anchors.margins: margins
+        anchors.topMargin: margins*6
+        anchors.leftMargin: margins
         font.bold: true
 
         text: "Add " + entityType
@@ -51,7 +52,8 @@ Rectangle {
         id: availableOptionsCombobox
         anchors.right: parent.right
         anchors.verticalCenter: title.verticalCenter
-        anchors.margins: margins
+        anchors.topMargin: margins*6
+        anchors.rightMargin: margins
         dataModel: availableOptions
     }
 
@@ -60,7 +62,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.top: title.bottom
         anchors.leftMargin: margins
-        anchors.topMargin: 2*margins
+        anchors.topMargin: 4*margins
 
         text:'Start time(ms)'
     }
@@ -89,7 +91,7 @@ Rectangle {
         anchors.leftMargin: margins
         anchors.topMargin: 2*margins
 
-        text:'End time'
+        text:'End time(ms)'
     }
 
     LineEdit {

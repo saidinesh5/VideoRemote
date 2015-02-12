@@ -47,7 +47,6 @@ Rectangle {
                 anchors.left: parent.left
                 anchors.leftMargin: dummyText.width
                 anchors.verticalCenter: parent.verticalCenter
-                font.pointSize: 10
             }
 
             MouseArea {
@@ -63,7 +62,6 @@ Rectangle {
 
     Text
     {
-        font.pointSize: 20
         anchors.right: parent.right
         anchors.rightMargin: 1
         anchors.bottom: parent.bottom
